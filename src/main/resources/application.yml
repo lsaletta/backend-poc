@@ -1,0 +1,26 @@
+springdoc:
+  swagger-ui:
+    path: /swagger-ui-custom.html
+
+spring:
+  application:
+    name: backend-poc
+  datasource:
+    driverClassName: org.h2.Driver
+    url: "jdbc:h2:mem:testdb"
+    password: "sa"
+    username: "password"
+    testOnBorrow: true
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 30000
+    validationQuery: SELECT 1
+    max-active: 15
+    max-idle: 10
+    max-wait: 8000
+flyway:
+  url: jdbc:h2:mem:testdb
+  schemas: USERSERVICE
+  user: "sa"
+  password: "password"
+  locations: classpath:db/migration

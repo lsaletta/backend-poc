@@ -29,9 +29,9 @@ public class PricesController {
     @Operation(summary = "Get price that match with the inputs fields")
     public ResponseEntity<PriceDTO> getPrice(
             @RequestParam(name = "application_date", required = true)
-            @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") LocalDateTime applicationDate,
-            @RequestParam(name = "product_id", required = true) Integer productId,
-            @RequestParam(name = "brand_id", required = true) Integer brandId) {
+            @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss") final LocalDateTime applicationDate,
+            @RequestParam(name = "product_id", required = true) final Integer productId,
+            @RequestParam(name = "brand_id", required = true) final Integer brandId) {
         log.info(">>> Launch getPrice Operation");
 
         return priceService.getPrices(applicationDate, productId, brandId)

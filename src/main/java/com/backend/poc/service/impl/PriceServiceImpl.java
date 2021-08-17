@@ -18,8 +18,10 @@ public class PriceServiceImpl implements PriceService {
 
     private final PriceRepository priceRepository;
 
+
     @Override
-    public Optional<PriceDTO> getPrices(LocalDateTime applicationDate, Integer productId, Integer brandId) {
+    public Optional<PriceDTO> getPrices(final LocalDateTime applicationDate, final Integer productId,
+                                        final Integer brandId) {
         return Optional.empty();
     }
 }
